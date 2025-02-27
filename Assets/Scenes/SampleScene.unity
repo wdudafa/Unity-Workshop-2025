@@ -155,6 +155,8 @@ MonoBehaviour:
   inventorySize: 15
   itemPrefab: {fileID: 7206856690706486625, guid: 3caac0404ecba4441b635b3a2d327f3a, type: 3}
   inventoryTransform: {fileID: 1261424893}
+  currentItemBeingDragged: {fileID: 0}
+  itemExample: {fileID: 11400000, guid: 2a98b8e4158b43c4bb6d456161e64042, type: 2}
 --- !u!4 &261662277
 Transform:
   m_ObjectHideFlags: 0
