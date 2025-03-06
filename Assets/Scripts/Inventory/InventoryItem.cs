@@ -6,20 +6,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IDragHandler, IPointerExitHandler
+public class InventoryItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler, IPointerClickHandler
 {
     public ItemClass item;
     public int quantity;
 
-    public event Action<InventoryItem> OnDragItem;
+    public event Action<InventoryItem> OnDragItem, OnBeginDragItem, OnEndDragItem, OnDropItem, OnClickItem;
 
     public void Set(ItemClass itemRef, int quantity)
     {
         this.quantity = quantity;
         item = itemRef;
 
+        //if empty
         if (itemRef == null)
         {
+            transform.GetChild(1).GetComponent<Image>().sprite = null;
             transform.GetChild(2).gameObject.SetActive(false);
         }
         else
@@ -36,13 +38,27 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IDragHandler, 
         OnDragItem?.Invoke(this);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
+        OnBeginDragItem?.Invoke(this);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
-        //you want to check if where you stopped is in an inventory slot
-        //if it is, exchange positions (so set original dragging to where you stopped, and viceversa)
+        OnEndDragItem?.Invoke(this);
     }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        OnDropItem?.Invoke(this);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //transform.GetChild(3).gameObject.SetActive(!transform.GetChild(3).gameObject.activeSelf);
+        OnClickItem?.Invoke(this);
+    }
+
+    //you want to check if where you stopped is in an inventory slot
+    //if it is, exchange positions (so set original dragging to where you stopped, and viceversa)
 }
