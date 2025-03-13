@@ -42,35 +42,12 @@ public class InventoryManager : MonoBehaviour
             item.OnBeginDragItem += OnBeginDragItem;
             item.OnEndDragItem += OnEndDragItem;
             item.OnDropItem += OnDropItem;
-            item.OnClickItem += OnClickItem;
             inventory.Add(item);
         }
     }
 
     public int currentItemBeingDragged = -1;
-    public int currentItemBeingSelected = -1;
-
-    private void OnClickItem(InventoryItem itemPassed)
-    {
-        int index = inventory.FindIndex(i => i.item == itemPassed.item);
-        if (currentItemBeingSelected == -1)
-        {
-            currentItemBeingSelected = index;
-            itemPassed.transform.GetChild(3).gameObject.SetActive(true);
-        }
-        else
-        {
-            if(index == currentItemBeingSelected)
-            {
-                itemPassed.transform.GetChild(3).gameObject.SetActive(false);
-                currentItemBeingSelected = -1;
-            }
-            //selecting new item? not working fully
-            inventory[currentItemBeingSelected].transform.GetChild(3).gameObject.SetActive(false);
-            currentItemBeingSelected = index;
-            itemPassed.transform.GetChild(3).gameObject.SetActive(true);
-        }
-    }
+ 
     private void OnDragItem(InventoryItem itemPassed)
     {
     }
