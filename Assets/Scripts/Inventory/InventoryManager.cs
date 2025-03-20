@@ -18,6 +18,7 @@ public class InventoryManager : MonoBehaviour
     {
         CreateInventorySlots();
         TestAddingItems();
+        inventoryTransform.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -88,10 +89,12 @@ public class InventoryManager : MonoBehaviour
 
     #region testing
     public ItemClass itemExample;
+    public ItemClass itemExample2;
     private void TestAddingItems()
     {
         int quantity = 3;
         AddItemToInventory(itemExample, quantity);
+        AddItemToInventory(itemExample2, 1);
     }
     #endregion
 }

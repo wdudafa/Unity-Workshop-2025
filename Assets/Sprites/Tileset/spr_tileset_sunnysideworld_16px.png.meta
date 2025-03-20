@@ -312,7 +312,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,6 +320,27 @@ TextureImporter:
       bones: []
       spriteID: 8da487b403d1dc84aa43fa14b14c60fa
       internalID: -2029421439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bed
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 464
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b74bb7fea3ac6438350163827e1dcb
+      internalID: -34531510
       vertices: []
       indices: 
       edges: []
@@ -335,6 +356,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      bed: -34531510
       carrotIcon: -925614478
       carrotSeed: 512756231
       carrotStage1: 2118024219

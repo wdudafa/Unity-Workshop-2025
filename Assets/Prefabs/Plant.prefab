@@ -97,4 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3f0244e811bd34c9aef4f4630a328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wateredColour: {r: 0.78867924, g: 0.78867924, b: 0.78867924, a: 1}
   seedRef: {fileID: 0}
+  growthIndex: 0
+  isWatered: 0

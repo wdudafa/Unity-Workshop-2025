@@ -29,7 +29,7 @@ public class TileManager : MonoBehaviour
     }
     public Vector3Int GetMouseToTile()
     {
-        Vector2 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int tilePos = tilemap.WorldToCell(worldPos);
         return tilePos;
     }
